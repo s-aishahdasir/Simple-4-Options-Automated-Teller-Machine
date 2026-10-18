@@ -16,3 +16,6 @@
 
 # Tools
 - eclipse IDE, Java language
+
+# Note for Myself...
+- Pleaseee always be careful with sc.next() and sc.nextLine() !! 
