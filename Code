@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class SolutionATM {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		String pin = "1234";
+		double balance = 1000.00;
+		
+		String inputPIN = sc.next();
+		if (inputPIN.equals(pin)) {
+			int option = sc.nextInt();
+			
+				if (option == 1) {
+					System.out.println("Authentication successful!");
+					System.out.println("Your current balance is: RM" + df.format(balance));
+				}
+				
+				else if (option == 2) {
+					double deposit = sc.nextDouble();
+					if (deposit <= 0) {
+						System.out.println("Authentication successful!");
+						System.out.println("Invalid deposit amount");
+					} else {
+						System.out.println("Authentication successful!");
+					    System.out.println("Successfully deposited: RM" + df.format(deposit));
+					    balance = deposit + balance;
+				    }
+				}
+				
+				else if (option == 3) {
+					double withdraw = sc.nextDouble();
+					if (withdraw>balance) {
+						System.out.println("Authentication successful!");
+						System.out.print("Insufficient funds");
+					} else if (withdraw <= 0) {
+						System.out.println("Authentication successful!");
+						System.out.print("Invalid withdrawal amount");
+					} else {
+						System.out.println("Authentication successful!");
+						System.out.print("Successfully withdrew: RM" + df.format(withdraw));
+					}
+					
+				}
+				
+				else if (option == 4) {
+					System.out.println("Authentication successful!");
+					System.out.print("Thank You");
+				}
+				
+				else {
+					System.out.println("Authentication successful!");
+					System.out.print("Invalid option");
+				}
+			
+			}
+		
+	  else {
+		System.out.print("Invalid Pin"); }
+		
+	}
+	
+}
